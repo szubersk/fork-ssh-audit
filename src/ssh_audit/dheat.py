@@ -21,6 +21,7 @@
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
    THE SOFTWARE.
 """
+
 import errno
 import multiprocessing
 import os
@@ -749,7 +750,7 @@ class DHEat:
 
 
     @staticmethod
-    def _resolve_hostname(host: str, ip_version_preference: List[int]) -> Tuple[int, str]:
+    def _resolve_hostname(host: str, ip_version_preference: List[int]) -> Tuple[int, str | int]:
         '''Resolves a hostname to its IPv4 or IPv6 address, depending on user preference.'''
 
         family = socket.AF_UNSPEC
